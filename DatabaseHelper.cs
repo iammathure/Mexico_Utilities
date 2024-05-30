@@ -46,10 +46,90 @@ namespace Mexico_Utility
             }
         }
 
+        private static bool ColumnExists(SqlDataReader reader, string columnName)
+        {
+            try
+            {
+                return reader.GetOrdinal(columnName) >= 0;
+            }
+            catch (IndexOutOfRangeException)
+            {
+                return false;
+            }
+        }
 
         public static string GetOutputParameter(SqlCommand command, string parameterName)
         {
             return command.Parameters[parameterName].Value?.ToString();
         }
+
+        public static async Task<List<T>> RetrieveAllAsync<T>(SqlConnection connection, string storedProcedure,string genflag) where T : new()
+        {
+            try
+            {
+                List<T> entities = new List<T>();
+
+                using (var command = CreateCommand(connection, storedProcedure))
+                {
+                    AddParameters(command, genflag, new { });
+
+                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                    {
+                        while (await reader.ReadAsync())
+                        {
+                            T entity = new T();
+                            foreach (var property in typeof(T).GetProperties())
+                            {
+
+                                if (ColumnExists(reader, property.Name) && !reader.IsDBNull(reader.GetOrdinal(property.Name)))
+                                {
+                                    property.SetValue(entity, reader.GetValue(reader.GetOrdinal(property.Name)));
+                                }
+                            }
+                            entities.Add(entity);
+                        }
+                    }
+                    // Retrieve the output parameter after closing the reader
+                    string message = GetOutputParameter(command, "@message");
+                    if (!string.IsNullOrEmpty(message))
+                    {
+                        Console.WriteLine(message);
+                    }
+                }
+
+                return entities;
+            }
+            catch (Exception ex)
+            { 
+
+                throw ex;
+            }
+        }
+
+        public static async Task<T> ReadAsync<T>(SqlConnection connection, T key, string storedProcedure,string genflag) where T : new()
+        {
+            using (var command = CreateCommand(connection, storedProcedure))
+            {
+               AddParameters(command, genflag, key);
+
+                using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                {
+                    if (await reader.ReadAsync())
+                    {
+                        T entity = new T();
+                        foreach (var property in typeof(T).GetProperties())
+                        {
+                            if (ColumnExists(reader, property.Name) && !reader.IsDBNull(reader.GetOrdinal(property.Name)))
+                            {
+                                property.SetValue(entity, reader.GetValue(reader.GetOrdinal(property.Name)));
+                            }
+                        }
+                        return entity;
+                    }
+                }
+            }
+            return default;
+        }
     }
 }
+
