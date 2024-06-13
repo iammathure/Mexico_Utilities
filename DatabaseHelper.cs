@@ -22,7 +22,35 @@ namespace Mexico_Utility
             {
                 Direction = ParameterDirection.Output
             };
+
             command.Parameters.Add(messageParam);
+            return command;
+        }
+
+        // Overloaded method to create a command with both @message and @results parameters
+        public static SqlCommand CreateCommand(SqlConnection connection, string storedProcedure, bool includeResultsParameter)
+        {
+            SqlCommand command = new SqlCommand(storedProcedure, connection)
+            {
+                CommandType = CommandType.StoredProcedure
+            };
+
+            SqlParameter messageParam = new SqlParameter("@message", SqlDbType.VarChar, 100)
+            {
+                Direction = ParameterDirection.Output
+            };
+
+            command.Parameters.Add(messageParam);
+
+            if (includeResultsParameter)
+            {
+                SqlParameter resultParam = new SqlParameter("@results", SqlDbType.VarChar, 100)
+                {
+                    Direction = ParameterDirection.Output
+                };
+
+                command.Parameters.Add(resultParam);
+            }
 
             return command;
         }
@@ -130,6 +158,17 @@ namespace Mexico_Utility
             }
             return default;
         }
+
+
+        public static int GetNextSequenceValue(string sequenceName,SqlConnection connection)
+        {
+                using (SqlCommand command = new SqlCommand($"SELECT NEXT VALUE FOR {sequenceName}", connection))
+                {
+                long result = (long)command.ExecuteScalar();
+                return (int)result;
+            }    
+        }
+
     }
 }
 
