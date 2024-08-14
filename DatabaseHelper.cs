@@ -98,15 +98,26 @@ namespace Mexico_Utility
 
                     using (SqlDataReader reader = await command.ExecuteReaderAsync())
                     {
+                        var properties = typeof(T).GetProperties();
                         while (await reader.ReadAsync())
                         {
                             T entity = new T();
-                            foreach (var property in typeof(T).GetProperties())
+                            foreach (var property in properties)
                             {
 
                                 if (ColumnExists(reader, property.Name) && !reader.IsDBNull(reader.GetOrdinal(property.Name)))
                                 {
-                                    property.SetValue(entity, reader.GetValue(reader.GetOrdinal(property.Name)));
+                                    object value = reader.GetValue(reader.GetOrdinal(property.Name));
+
+                                    // this has been added because in database type is date and in model class type is string for expiry date
+                                    if (property.PropertyType == typeof(string) && value is DateTime dateTimeValue) 
+                                    {
+                                        property.SetValue(entity, dateTimeValue.ToString("dd-MM-yyyy"));
+                                    }
+                                    else
+                                    {
+                                        property.SetValue(entity, value);
+                                    }
                                 }
                             }
                             entities.Add(entity);

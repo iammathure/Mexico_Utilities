@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>Mexico.Utility</PackageId>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<Authors>YourName</Authors>
 		<Company>YourCompany</Company>
 		<Description>This is a utility library for mexico store</Description>
