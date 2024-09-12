@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SD830317\\source\\repos\\Mexico_Utility\\Mexico_Utility.csproj": {}
+    "C:\\Users\\SD830317\\source\\repos\\Mexico_Utilities\\Mexico_Utility.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SD830317\\source\\repos\\Mexico_Utility\\Mexico_Utility.csproj": {
-      "version": "1.0.0",
+    "C:\\Users\\SD830317\\source\\repos\\Mexico_Utilities\\Mexico_Utility.csproj": {
+      "version": "1.0.1",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SD830317\\source\\repos\\Mexico_Utility\\Mexico_Utility.csproj",
-        "projectName": "Mexico_Utility",
-        "projectPath": "C:\\Users\\SD830317\\source\\repos\\Mexico_Utility\\Mexico_Utility.csproj",
+        "projectUniqueName": "C:\\Users\\SD830317\\source\\repos\\Mexico_Utilities\\Mexico_Utility.csproj",
+        "projectName": "Mexico.Utility",
+        "projectPath": "C:\\Users\\SD830317\\source\\repos\\Mexico_Utilities\\Mexico_Utility.csproj",
         "packagesPath": "C:\\Users\\SD830317\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SD830317\\source\\repos\\Mexico_Utility\\obj\\",
+        "outputPath": "C:\\Users\\SD830317\\source\\repos\\Mexico_Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -25,9 +25,14 @@
           "net8.0"
         ],
         "sources": {
+          "C:\\LocalNugetFeed": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Users\\SD830317\\source\\repos\\Mexico_Utilities\\bin\\Release": {},
+          "http://proget/nuget/SDWorxNuget/": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packagesource": {},
+          "https://pkgs.dev.azure.com/SDWorxUKLive/_packaging/SDWorxNuget@Local/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -52,7 +57,7 @@
           "dependencies": {
             "Microsoft.Data.SqlClient": {
               "target": "Package",
-              "version": "[5.2.0, )"
+              "version": "[5.2.2, )"
             }
           },
           "imports": [

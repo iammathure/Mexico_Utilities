@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>Mexico.Utility</PackageId>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<Authors>YourName</Authors>
 		<Company>YourCompany</Company>
 		<Description>This is a utility library for mexico store</Description>
@@ -14,7 +14,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
+	  <Compile Remove="TokenGeneration\**" />
+	  <EmbeddedResource Remove="TokenGeneration\**" />
+	  <None Remove="TokenGeneration\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
 	</ItemGroup>
 
 </Project>

@@ -10,3 +10,16 @@ C:\Users\SD830317\source\repos\Mexico_Utility\obj\Debug\net8.0\refint\Mexico_Uti
 C:\Users\SD830317\source\repos\Mexico_Utility\obj\Debug\net8.0\Mexico_Utility.pdb
 C:\Users\SD830317\source\repos\Mexico_Utility\obj\Debug\net8.0\ref\Mexico_Utility.dll
 C:\Users\SD830317\source\repos\Mexico_Utility\obj\Debug\net8.0\Mexico_Utility.csproj.AssemblyReference.cache
+C:\Users\SD830317\source\repos\Mexico_Utilities\bin\Debug\net8.0\Mexico_Utility.deps.json
+C:\Users\SD830317\source\repos\Mexico_Utilities\bin\Debug\net8.0\Mexico_Utility.dll
+C:\Users\SD830317\source\repos\Mexico_Utilities\bin\Debug\net8.0\Mexico_Utility.pdb
+C:\Users\SD830317\source\repos\Mexico_Utilities\obj\Debug\net8.0\Mexico_Utility.csproj.AssemblyReference.cache
+C:\Users\SD830317\source\repos\Mexico_Utilities\obj\Debug\net8.0\Mexico_Utility.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SD830317\source\repos\Mexico_Utilities\obj\Debug\net8.0\Mexico_Utility.AssemblyInfoInputs.cache
+C:\Users\SD830317\source\repos\Mexico_Utilities\obj\Debug\net8.0\Mexico_Utility.AssemblyInfo.cs
+C:\Users\SD830317\source\repos\Mexico_Utilities\obj\Debug\net8.0\Mexico_Utility.csproj.CoreCompileInputs.cache
+C:\Users\SD830317\source\repos\Mexico_Utilities\obj\Debug\net8.0\Mexico_Utility.sourcelink.json
+C:\Users\SD830317\source\repos\Mexico_Utilities\obj\Debug\net8.0\Mexico_Utility.dll
+C:\Users\SD830317\source\repos\Mexico_Utilities\obj\Debug\net8.0\refint\Mexico_Utility.dll
+C:\Users\SD830317\source\repos\Mexico_Utilities\obj\Debug\net8.0\Mexico_Utility.pdb
+C:\Users\SD830317\source\repos\Mexico_Utilities\obj\Debug\net8.0\ref\Mexico_Utility.dll
