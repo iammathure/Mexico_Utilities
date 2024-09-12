@@ -5,11 +5,11 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageId>Mexico.Utility</PackageId>
-		<Version>1.0.2</Version>
+		<Version>1.0.3</Version>
 		<Authors>YourName</Authors>
 		<Company>YourCompany</Company>
 		<Description>This is a utility library for mexico store</Description>
-		<PackageTags>Date Conversion added</PackageTags>
+		<PackageTags>Microsoft.Data.SqlClient updated</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
